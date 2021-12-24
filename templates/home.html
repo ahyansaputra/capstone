@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+
+    <title>Capstone</title>
+</head>
+
+<body>
+
+    <head id="home">
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#classify">Classify</a>
+            <a href="#team">Team</a>
+        </nav>
+        <div class="floating-bg"></div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/twitter-logo.png') }}" alt="twitter-logo">
+        </div>
+        <div class="heading">
+            <h1>Twitter Classification Hate Speech</h1>
+        </div>
+    </head>
+
+    <main>
+        <section class="classify" id="classify">
+            <h2 class="section-heading">Classify</h2>
+            <form action="{{url_for('home')}}" method="post">
+                <input class="form-input" name='form-input' type="text" placeholder="Masukkan kalimat">
+                <input class="form-btn" name="form-btn" type="submit" value="Classify">
+            </form>
+            <div class="output">
+                <h3>Result</h3>
+            </div>
+        </section>
+
+        <section class="team" id="team">
+            <h1>Team</h1>
+            <div class="cards-wrapper">
+                <card-item src="" name="Adri" position="Member" text="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Asperiores, impedit!">
+                </card-item>
+                <card-item src="" name="Ahyan" position="Member" text="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Asperiores, impedit!">
+                </card-item>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='index.js') }}" type="module"></script>
+
+</body>
